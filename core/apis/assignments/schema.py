@@ -43,6 +43,7 @@ class AssignmentGradeSchema(Schema):
 
     id = fields.Integer(required=True, allow_none=False)
     grade = EnumField(GradeEnum)
+    grade.required = True
 
     @post_load
     def initiate_class(self, data_dict, many, partial):
